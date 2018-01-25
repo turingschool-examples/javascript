@@ -15,7 +15,8 @@ other style guides
 
 #### FEE Module 2
 
-  - [.eslintrc](linters/module-2/.eslintrc)
+  - [.eslintrc for non-react projects](linters/module-2/non-react/.eslintrc)
+  - [.eslintrc for react projects](linters/module-2/react/.eslintrc)
 
 #### FEE Module 3
 
