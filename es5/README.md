@@ -314,7 +314,7 @@
     var isJedi = luke.jedi;
     ```
 
-  - Use subscript notation `[]` when accessing properties with a variable.
+  - Use bracket notation `[]` when accessing properties with a variable.
 
     ```javascript
     var luke = {
