@@ -4,13 +4,13 @@ During mod 3 we want y'all to use airbnb's eslint config for your projects.
 
 Here is a list of setup instructions for adding it to your project along with a lint script. 
 
-### Steps
+## Steps
 
-1. Add eslint-config-airbnb as a dev dependency
+### 1. Add eslint-config-airbnb as a dev dependency
   * `npm i eslint-config-airbnb -D`
   * or `yarn add eslint-config-airbnb -D`
 
-2. Add a lint script and extend airbnb in the eslintrc config portion of package.json
+### 2. Add a lint script and extend airbnb in the eslintrc config portion of package.json
 
 ```json
 // update the scripts and eslintConfig portions of your package.json to match below
@@ -33,7 +33,7 @@ And that's it! Now you can lint your application by running:
  * `npm lint`
  * or `yarn lint`
 
-3. **Optionally:** Add an .eslintrc file to override the airbnb rules:
+### 3. **Optionally:** Add an .eslintrc file to override the airbnb rules:
 
 Create a .eslintrc file in your src directory. **It must be in src for the lint script to work properly**
 
