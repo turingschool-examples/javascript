@@ -16,11 +16,10 @@ other style guides
 #### FEE Module 2
 
   - [.eslintrc for non-react projects](linters/module-2/non-react/.eslintrc)
-  - [.eslintrc for react projects](linters/module-2/react/.eslintrc)
 
 #### FEE Module 3
 
-  - [.eslintrc](linters/module-3/.eslintrc)
+  - [Linter Setup for React](linters/module-3/linter-setup.md)
 
 This style guide has been adapted from [the airbnb javascript style guide](https://github.com/airbnb/javascript)
 
