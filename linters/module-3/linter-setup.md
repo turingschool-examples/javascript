@@ -30,29 +30,40 @@ Here is a list of setup instructions for adding it to your project along with a 
 ```
 
 And that's it! Now you can lint your application by running:
- * `npm lint`
- * or `yarn lint`
+  
+  * `npm lint`
+  * or `yarn lint`
 
-### 3. **Optionally:** Add an .eslintrc file to override the airbnb rules:
+### 3. Add an .eslintrc file to override the airbnb rules:
 
-Create a .eslintrc file in your src directory. **It must be in src for the lint script to work properly**
+Create a `.eslintrc` file in your src directory. **It must be in src for the lint script to work properly**
 
-Copy the content below into that file and update as you like.
+Copy the content below into that file. This rule override makes it so that there is no error for having devDependencies.
 
 ```json
 // Use this file as a starting point for your project's .eslintrc. 
 // By default we're using airbnb's .eslintrc
-// Copy this file, and add rule overrides as needed.
-// Below are some that you may use.
 
-// comma dangle is for trailing commas - airbnb requires them
-// max lines per function - airbnb defaults to 50 
-// semicolons are required by airbnb 
 {
   "rules": {
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+  }
+}
+```
+
+### 4. (Optionally) Add some more rules to your eslint file:
+
+* Comma dangle is for trailing commas - airbnb requires them, below makes it required to omit them
+* Max lines per function - airbnb defaults to 50. Below makes it 30
+* Semicolons are required by airbnb by default, below makes it so they are required to be absent
+
+```json
+{
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     "comma-dangle": ["error", "never"],
     "max-lines-per-function": ["error", 30],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
   }
 }
 ```
