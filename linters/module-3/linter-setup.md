@@ -60,7 +60,7 @@ Copy the content below into that file. This rule override makes it so that there
 ```json
 {
   "rules": {
-    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "comma-dangle": ["error", "never"],
     "max-lines-per-function": ["error", 30],
     "semi": ["error", "never"],
