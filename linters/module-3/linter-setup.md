@@ -46,7 +46,7 @@ Copy the content below into that file. This rule override makes it so that there
 
 {
   "rules": {
-    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
   }
 }
 ```
