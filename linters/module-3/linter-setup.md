@@ -19,7 +19,7 @@ Here is a list of setup instructions for adding it to your project along with a 
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/eslint/bin/eslint.js --ignore-pattern node_modules/ '**/*.js'"
+    "lint": "eslint src/**/*.js --ignore-pattern node_modules/ --ignore-pattern src/serviceWorker.js"
   },
   "eslintConfig": {
     "extends": [
