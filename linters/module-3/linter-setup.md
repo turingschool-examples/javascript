@@ -41,6 +41,7 @@ Create a `.eslintrc` file in your src directory. **It must be in src for the lin
 Copy the content below into that file. 
   * The first rule makes it so that having devDependencies won't throw an error
   * The second rule makes it so that .js files can have jsx
+  * The third makes it so all propTypes are allowed
   
 ```json
 // Use this file as a starting point for your project's .eslintrc. 
@@ -50,6 +51,7 @@ Copy the content below into that file.
   "rules": {
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": "disabled",
   }
 }
 ```
