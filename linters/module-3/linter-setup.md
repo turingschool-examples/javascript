@@ -19,21 +19,16 @@ Here is a list of setup instructions for adding it to your project along with a 
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js --ignore-pattern node_modules/ --ignore-pattern src/serviceWorker.js"
+    "lint": "eslint src/**/*.js"
   },
 ```
 
 And that's it! Now you can lint your application by running:
-  * `npm lint`
+  * `npm run lint`
 
 ### 3. Add an .eslintrc file to override some of the airbnb rules:
 
-Create a `.eslintrc` file in your src directory. **It must be in src for the lint script to work properly**
-
-Copy the content below into that file. 
-  * The first rule makes it so that having devDependencies won't throw an error
-  * The second rule makes it so that .js files can have jsx
-  * The third makes it so all propTypes are allowed
+Create a `.eslintrc` file in your project's root
   
 ```json
 // Use this file as a starting point for your project's .eslintrc.
@@ -42,6 +37,7 @@ Copy the content below into that file.
 {
   "extends": ["airbnb", "react-app"],
   "parser": "babel-eslint",
+  "ignorePatterns": ["node_modules/", "src/serviceWorker.js", "src/reportWebVitals.js"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
