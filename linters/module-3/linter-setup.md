@@ -6,11 +6,11 @@ Here is a list of setup instructions for adding it to your project along with a 
 
 ## Steps
 
-### 1. Add eslint-config-airbnb as a dev dependency
+### 1. Add eslint-config-airbnb and babel-eslint as a dev dependency
   * `npm i eslint-config-airbnb -D`
-  * or `yarn add eslint-config-airbnb -D`
+  * `npm i babel-eslint -D`
 
-### 2. Add a lint script and extend airbnb in the eslintrc config portion of package.json
+### 2. Add a `lint` script to your package.json file
 
 ```json
 // update the scripts and eslintConfig portions of your package.json to match below
@@ -21,20 +21,12 @@ Here is a list of setup instructions for adding it to your project along with a 
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js --ignore-pattern node_modules/ --ignore-pattern src/serviceWorker.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "airbnb"
-    ]
-  },
 ```
 
 And that's it! Now you can lint your application by running:
-  
   * `npm lint`
-  * or `yarn lint`
 
-### 3. Add an .eslintrc file to override the airbnb rules:
+### 3. Add an .eslintrc file to override some of the airbnb rules:
 
 Create a `.eslintrc` file in your src directory. **It must be in src for the lint script to work properly**
 
@@ -44,32 +36,17 @@ Copy the content below into that file.
   * The third makes it so all propTypes are allowed
   
 ```json
-// Use this file as a starting point for your project's .eslintrc. 
+// Use this file as a starting point for your project's .eslintrc.
 // By default we're using airbnb's .eslintrc
 
 {
+  "extends": ["airbnb", "react-app"],
+  "parser": "babel-eslint",
   "rules": {
+    "react/react-in-jsx-scope": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/forbid-prop-types": "disabled",
-  }
-}
-```
-
-### 4. (Optionally) Add some more rules to your eslint file:
-
-* Comma dangle is for trailing commas - airbnb requires them, below makes it required to omit them
-* Max lines per function - airbnb defaults to 50. Below makes it 30
-* Semicolons are required by airbnb by default, below makes it so they are required to be absent
-
-```json
-{
-  "rules": {
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "comma-dangle": ["error", "never"],
-    "max-lines-per-function": ["error", 30],
-    "semi": ["error", "never"],
+    "react/forbid-prop-types": 0,
   }
 }
 ```
